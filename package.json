@@ -1,0 +1,24 @@
+{
+    "name": "cagliostro",
+    "version": "3.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node .",
+        "test": "nodemon index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kaliztro/Cagliostro-3.0.git"
+      },
+    "keywords": [],
+    "author": "Kaliztro",
+    "license": "ISC",
+    "dependencies": {
+        "discloud-status": "^0.1.6",
+        "discord.js": "^13.2.0",
+        "glob": "^7.1.7",
+        "moment": "^2.29.1",
+        "mongoose": "^6.0.2"
+    }
+}
