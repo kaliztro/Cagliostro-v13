@@ -41,7 +41,7 @@ client.on("interactionCreate", async (interaction) => {
 
         const guildDB = await Schema.findOne({ _id: interaction.member.guild.id });
 
-        let cargo = interaction.member.guild.roles.cache.get(guildDB.Botao?.cargo) 
+        let cargo = interaction.member.guild.roles.cache.get(guildDB?.Botao?.cargo) 
 
         if (!cargo) return
 
