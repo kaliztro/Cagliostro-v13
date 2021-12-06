@@ -1,5 +1,4 @@
 const { Client, CommandInteraction } = require("discord.js");
-const wait = require('util').promisify(setTimeout);
 
 module.exports = {
     name: "ping",
@@ -14,7 +13,6 @@ module.exports = {
     run: async (client, interaction, args) => {
 
         await interaction.reply(`**Ping?**`);
-        await wait(1000);
         await interaction.editReply(`🏓 **| Pong!**\n Latência da API: **${Math.round(client.ws.ping)}ms**`)
 
 
