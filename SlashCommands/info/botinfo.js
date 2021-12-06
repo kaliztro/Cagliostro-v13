@@ -3,6 +3,11 @@ const config = require(`../../config.json`);
 const moment = require('moment');
 const discloud = require("discloud-status");
 
+const client = require("../../index");
+const PREFIX = client.config.PREFIX
+
+const Schema = require('../../models/Guilds');
+
 moment.locale('pt-BR');
 
 module.exports = {
@@ -47,6 +52,8 @@ module.exports = {
             dnd: '`🔴` Não Perturbe'
         }
 
+        const guildConfig = await Schema.findOne({ _id: interaction.guild.id });
+        const prefix = guildConfig?.Prefix.prefix ?? PREFIX
 
         const embed = new MessageEmbed()
             .setColor(config.cor)
@@ -54,6 +61,7 @@ module.exports = {
             .setAuthor('🤖 Minhas informações')
             .addField('**Meu nick**', userName)
             .addField('**Meu ID**', client.user.id)
+            .addField('**Meu prefix é:**', `ㅤㅤ${prefix}`)
             .addField('**Meu criador**', 'Kaliztro#4988')
             .addField('**Servidores**', `ㅤ🛡 ${servsize}`, true)
             .addField('**Usuários**', `ㅤ👥${usersize}`, inline)
