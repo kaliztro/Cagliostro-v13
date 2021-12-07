@@ -15,7 +15,7 @@ require("./handler")(client);
 
 client.login(client.config.token);
 
-//sei la, acho que é do prefix
+//prefix
 client.on("messageCreate", async (message) => {
 
     const config = require("./config.json");
