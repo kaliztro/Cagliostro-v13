@@ -1,23 +1,14 @@
 ver o comando server info no slash e normal pq falta coisa
 
-ver o comando falar 
-
 ver o comando de lock que nao tranca o selecionado e sim o da mensagem
 
-colocar os comandos de diversao tanto no normal quanto no slash
-
-confiigurar os comandos no mongodb (mensagem de welcome, saida, auto role, botao do jogo gratis) comando de saida e os /
-
-criar o comando do botao de jogo gratis no normal
-
-sistema de xp e comando lvl no / e normal
-
-ver o custom prefix  quando digitar prefix reset voltar ao padrao
+configurar os comandos no mongodb comando de saida e os /
 
 comparar os comandos / e os normais
 
 ver os comandos do dono que o message.author.id != config.donoID n esta funcionando 
 
+criar o comando de config igual o bot de jogos gratis
 
 testar todos os comandos
 
@@ -25,4 +16,10 @@ testar todos os comandos
 https://github.com/reconlx 
 
 
+-------------> depois do bot estar pronto <-------------
 
+criar o botao de adicione-me ao servidor
+
+sistema de xp e comando lvl no / e normal
+
+criar a opcao de reset do prefix
