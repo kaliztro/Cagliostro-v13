@@ -8,7 +8,7 @@ const Schema = require('../../models/Guilds');
 module.exports = {
     name: "emoji",
     category: "outros",
-    aliases: [""],
+    aliases: [],
     usage: `emoji e o nome do emoji.`,
     description: "Envia o emoji escolhido no chat.",
     run: async (client, message, args) => {

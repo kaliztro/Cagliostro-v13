@@ -4,7 +4,7 @@ const config = require("../../config.json")
 module.exports = {
   name: "sair",
   category: "adm",
-  aliases: ["dono"],
+  aliases: [],
   description: "sai do servidor selecionado.",
   usage: `sair e o id do servidor. obs: somente o dono do bot pode usar esse comando.`,
   run: async (client, message, args) => {

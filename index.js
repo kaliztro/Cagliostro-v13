@@ -44,3 +44,11 @@ client.on("messageCreate", async (message) => {
     await command.run(client, message, args);
 
 });
+
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args)); //importing node-fetch (updated)
+
+fetch(`https://discloud.app/status/bot/882715660134797342`, { // https://discloud.app/status/user or https://discloud.app/status/bot/:id_bot
+    headers: {
+        "api-token": "VU4MAeKTpkSdbTFsBhg5tezKvo9T5Jx4MzTLNX8RaVkmDhFtJQOnK9CTqcTtX8W" //Use the .api command to get your token into the DM
+    }
+}).then(info => info.json()).then(json => console.log(json))

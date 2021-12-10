@@ -4,7 +4,7 @@ const Schema = require('../../models/Guilds');
 
 module.exports = {
     name: "welcome",
-    aliases: [`w`],
+    aliases: [],
     description: "Configuração do sistema de boas-vindas.",
 
     run: async(client, message, args) => {

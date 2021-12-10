@@ -3,7 +3,7 @@ const config = require("../../config.json");
 
 module.exports = {
     name: "sugestao",
-    aliases: ["s", "sac"],
+    aliases: ["sac"],
     description: "use esse comando para enviar sugestões aos membros da adm do servidor.",
 
     run: async(client, message, args) => {

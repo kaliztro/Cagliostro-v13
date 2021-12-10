@@ -1,10 +1,4 @@
-ver o comando server info no slash e normal pq falta coisa
-
 ver o comando de lock que nao tranca o selecionado e sim o da mensagem
-
-configurar os comandos no mongodb comando de saida e os /
-
-comparar os comandos / e os normais
 
 ver os comandos do dono que o message.author.id != config.donoID n esta funcionando 
 
@@ -18,7 +12,7 @@ https://github.com/reconlx
 
 -------------> depois do bot estar pronto <-------------
 
-criar o botao de adicione-me ao servidor
+criar o botao de adicione-me ao servidor nos status
 
 sistema de xp e comando lvl no / e normal
 

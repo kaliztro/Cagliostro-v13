@@ -11,11 +11,11 @@ module.exports = {
         let embed1 = new Discord.MessageEmbed()
         .setColor(config.cor)
         .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-        .setDescription(`**Aqui estão os meus comandos**`);
+        .setDescription(`\n **Selecione a categoria de comando.**\n\n  📻 **Informações** \n\n 🦾 **Moderação** \n\n ⚙️ **Configuração** \n\n 🥳 **Diversão**`);
 
         let painel = new MessageActionRow().addComponents( new MessageSelectMenu()
         .setCustomId(`menu`)
-        .setPlaceholder(`veja meus comandos.`) // Mensagem estampada
+        .setPlaceholder(`veja meus comandos.`) 
         .addOptions([
 
             {
@@ -42,6 +42,12 @@ module.exports = {
                 emoji: `⚙️`,
                 value: `ajus`,
             },
+            {
+                label: `Diversão`,
+                description: `comandos de diversão`,
+                emoji: `🥳`,
+                value: `dive`,
+            },
         ])
 
       )
@@ -65,7 +71,7 @@ module.exports = {
                     let embed3 = new Discord.MessageEmbed()
                     .setColor(config.cor)
                     .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`Tela de inicio.`);
+                    .setDescription(`\n **Selecione a categoria de comando.**\n\n  📻 **Informações** \n\n 🦾 **Moderação** \n\n ⚙️ **Configuração** \n\n 🥳 **Diversão**`);
 
                     msg.edit({ embeds: [embed3], components: [painel] });
                 };
@@ -86,7 +92,9 @@ module.exports = {
                     let embed3 = new Discord.MessageEmbed()
                     .setColor(config.cor)
                     .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Aqui estão os meus comandos de moderação** \n\n lista de comandos`);
+                    .setDescription(`**Aqui estão os meus comandos de moderação** \n\n **•apagar**\nApaga as mensagens de um canal.\n\n**•ban**\nBane um membro do servidor.\n\n**•expulsar**\nExpulsa um membro do servidor.\n
+                    **•cargo**\nAtribui um cargo ao membro mencionado.\n\n**•rcargo**\nRemove um cargo do membro mencionado.\n\n**•falar**\nBot fala o que for escrito.\n\n**•lock**\ntranca um canal.\n\n**•unlock**\nDestranca um canal.\n
+                    **•prefix**\nAltera o prefixo do bot.\n\n**•say**\nBot fala o que for escrito sé que em Embed.\n\n `);
 
                     msg.edit({ embeds: [embed3], components: [painel] });
                 };
@@ -95,7 +103,16 @@ module.exports = {
                     let embed3 = new Discord.MessageEmbed()
                     .setColor(config.cor)
                     .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Aqui estão os meus comandos de ajustes** \n\n lista de comandos`);
+                    .setDescription(`**Aqui estão os meus comandos de ajustes** \n\n **ERRO 404** Comandos não encontrados`);
+
+                    msg.edit({ embeds: [embed3], components: [painel] });
+                };
+                if (valor === `dive` ) {
+
+                    let embed3 = new Discord.MessageEmbed()
+                    .setColor(config.cor)
+                    .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
+                    .setDescription(`**Aqui estão os meus comandos de diversão** \n\n **•coinflip**\nJogo de Cara ou Coroa.\n\n **•emoji**\nEnvia o emoji escolhido no chat.`);
 
                     msg.edit({ embeds: [embed3], components: [painel] });
                 };

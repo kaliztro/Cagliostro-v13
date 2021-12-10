@@ -6,15 +6,20 @@ module.exports = {
     aliases: [],
     description: "envia todos os comandos no chat.",
 
-    run: async(client, message, args) => {
+    run: async (client, message, args) => {
 
-    client.commands.forEach (async c => {
+        if (message.author.id != config.donoID) {
+            return message.channel.send(`${message.author}, Tu deve estar doidão né?, só o dono do Bot pode executar esse comando.`)
+        }
 
-    const command = client.commands.get(c.name)
 
-    message.channel.send(`${command.name} \n ${command.description}`)
+        client.commands.forEach(async c => {
 
-    })
+            const command = client.commands.get(c.name)
+
+            message.channel.send(`${command.name} \n ${command.description}`)
+
+        })
 
     }
 }
