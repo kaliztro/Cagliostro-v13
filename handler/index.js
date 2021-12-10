@@ -41,15 +41,14 @@ module.exports = async (client) => {
         arrayOfSlashCommands.push(file);
     });
     client.on("ready", async () => {
-        // Register for a single guild
-        
-        await client.guilds.cache
-            .get("904510678704979990")
-            .commands.set(arrayOfSlashCommands);
+        // registra em apenas um servidor
 
-        // Register for all the guilds the bot is in
+        await client.guilds.cache.get("904510678704979990").commands.set(arrayOfSlashCommands);
+
+        // registra em todos os servidors
 
         // await client.application.commands.set(arrayOfSlashCommands);
+        
     });
 
     // mongoose
