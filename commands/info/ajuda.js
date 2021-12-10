@@ -112,7 +112,7 @@ module.exports = {
                     let embed3 = new Discord.MessageEmbed()
                     .setColor(config.cor)
                     .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Aqui estão os meus comandos de diversão** \n\n **•coinflip**\nJogo de Cara ou Coroa.\n\n **•emoji**\nEnvia o emoji escolhido no chat.`);
+                    .setDescription(`**Aqui estão os meus comandos de diversão** \n\n **•coinflip**\nJogo de Cara ou Coroa.\n\n **•emoji**\nEnvia o emoji escolhido no chat. \n\n **•8ball**\nResponde a sua pergunta`);
 
                     msg.edit({ embeds: [embed3], components: [painel] });
                 };
