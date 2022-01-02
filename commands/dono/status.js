@@ -9,9 +9,9 @@ module.exports = {
     category: "dono",
     run: async (client, message, args) => {
 
-        // if(message.author.id != config.donoID) {
-        //   return message.channel.send(`${message.author}, Tu deve estar doidão né?, só o dono do Bot pode alterar a mensagem de status.`)
-        // }
+        if(message.author.id != config.donoID) {
+          return message.channel.send(`${message.author}, Tu deve estar doidão né?, só o dono do Bot pode alterar a mensagem de status.`)
+        }
 
         if (!args.length) {
             return message.channel.send("Digite o novo status.")
@@ -20,7 +20,7 @@ module.exports = {
         const Mensagem = args.join(" ")
 
         await Schema.findOneAndUpdate({ _id: `outros` }, { Status: { mensagem: Mensagem } }, { upsert: true });
-        return message.channel.send(`o status foi atualizado para: **${Mensagem}**`)
+        return message.channel.send({ content: `o status foi atualizado para: **${Mensagem}**`, ephemeral: true})
 
 
     }
