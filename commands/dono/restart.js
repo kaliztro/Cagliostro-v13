@@ -17,7 +17,7 @@ module.exports = {
         fetch(`https://discloud.app/status/bot/882715660134797342/restart`, { 
             method: 'POST', 
             headers: {
-                "api-token": "VU4MAeKTpkSdbTFsBhg5tezKvo9T5Jx4MzTLNX8RaVkmDhFtJQOnK9CTqcTtX8W" 
+                "api-token": config.Discloud 
             }
         }).then(info => info.json()).then(json => console.log(json));
         

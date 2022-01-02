@@ -49,6 +49,6 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 
 fetch(`https://discloud.app/status/bot/882715660134797342`, { // https://discloud.app/status/user or https://discloud.app/status/bot/:id_bot
     headers: {
-        "api-token": "VU4MAeKTpkSdbTFsBhg5tezKvo9T5Jx4MzTLNX8RaVkmDhFtJQOnK9CTqcTtX8W" //Use the .api command to get your token into the DM
+        "api-token": client.config.Discloud //Use the .api command to get your token into the DM
     }
 }).then(info => info.json()).then(json => console.log(json))
