@@ -8,7 +8,7 @@ client.on("ready", () => {
         const stats = await Schema.findOne({ _id: `outros` });
         const msg = stats?.Status.mensagem
 
-        client.user.setPresence({ activities: [{ name: msg, type: 'LISTENING' }], status: 'idle' })
+        client.user.setPresence({ activities: [{ name: msg, type: 'LISTENING' }], status: 'online' }) //idle
 
     }, 15 * 1000)
 
