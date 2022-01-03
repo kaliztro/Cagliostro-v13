@@ -12,8 +12,12 @@ https://github.com/reconlx
 
 -------------> depois do bot estar pronto <-------------
 
-criar o botao de adicione-me ao servidor nos status
-
 sistema de xp e comando lvl no / e normal
 
 criar a opcao de reset do prefix
+
+corrigir erro: DiscordAPIError: You can only bulk delete messages that are under 14 days old.
+
+colocar emoji no comando serverinfo
+
+bot desliga so o usuario estiver offline
