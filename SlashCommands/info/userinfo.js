@@ -34,11 +34,11 @@ module.exports = {
         if (member.presence.status === 'offline') member.presence.status = '`⚫`offline';
 
         let status = member.presence.status;
-
         const embed = new MessageEmbed()
             .setAuthor(member.user.tag, member.user.displayAvatarURL())
             .setColor(config.cor)
             .setImage(member.user.displayAvatarURL({ dynamic: true, size: 1024 }))
+            .addField(`Apelido`, `${member.nickname || `Esse usuario não possue apelido`}`)
             .addField("Tag", `#${member.user.discriminator}`)
             .addField("ID", member.id)
             .addField('Cargo(s)', `<@&${member._roles.join('> <@&')}>`)
