@@ -1,5 +1,7 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
 const config = require(`../../config.json`);
+const wait = require('util').promisify(setTimeout);
+
 
 module.exports = {
     name: "8ball",
@@ -44,7 +46,9 @@ module.exports = {
         .setThumbnail()
         .setFooter(`• Autor: ${interaction.user.username}`, interaction.user.displayAvatarURL({ dynamic: true, size: 1024})); 
 
-        interaction.reply({embeds: [embed], ephemeral: false})
+        await interaction.deferReply();
+        await wait(400);
+        await interaction.editReply({embeds: [embed], ephemeral: false})
         
     },
 };
