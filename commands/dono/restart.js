@@ -21,7 +21,7 @@ module.exports = {
             headers: {
                 "api-token": config.Discloud
             }
-        }).then(info => info.json()).then(json => console.log(json));
+        });
 
 
 
