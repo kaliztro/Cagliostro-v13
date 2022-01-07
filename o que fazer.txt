@@ -1,7 +1,5 @@
 ver o comando de lock que nao tranca o selecionado e sim o da mensagem
 
-ver os comandos do dono que o message.author.id != config.donoID n esta funcionando 
-
 criar o comando de config igual o bot de jogos gratis
 
 testar todos os comandos
@@ -12,7 +10,7 @@ https://github.com/reconlx
 
 -------------> depois do bot estar pronto <-------------
 
-sistema de xp e comando lvl no / e normal
+sistema de xp e comando lvl no / e normal     possivel video ensinando https://www.youtube.com/watch?v=WgTK78GUmZ4&ab_channel=FusionTerror
 
 criar a opcao de reset do prefix
 
@@ -21,3 +19,9 @@ corrigir erro: DiscordAPIError: You can only bulk delete messages that are under
 colocar emoji no comando serverinfo
 
 bot desliga so o usuario estiver offline
+
+corrigir problema em que se o bot nao tem permissao ele fecha
+
+criar o comando castigo
+
+setar o comando cor para funcionar apenas no servidor do fabricio e parceiros 

@@ -10,8 +10,8 @@ module.exports = {
     usage: `cor e o nome da cor`,
     run: async (client, message, args) => {
 
-        const guild = client.guilds.cache.get("545386837846523905");
-        if (guild != message.guild) return message.channel.send("Esse comando não esta disponivel nesse servidor. 😭")
+        // const guild = ("545386837846523905" || "692124236872941648")
+        // if (guild != message.guild) return message.channel.send("Esse comando não esta disponivel nesse servidor. 😭");
 
     const coresEmbed = new Discord.MessageEmbed()
     .setTitle('Cores disponiveis')
@@ -20,17 +20,17 @@ module.exports = {
 
     var string = args.join(" ");
     var colors = [
-        {name:"ciano", id:"739360066162917457"},
-        {name:"laranja", id:"739364270135050331"},
-        {name:"verde", id:"739364714399662151"},
-        {name:"preto", id:"739364437089058837"},
-        {name:"branco", id:"739364500406272061"},
-        {name:"rosa", id:"739364363869093950"},
-        {name:"roxo", id:"739364393141272616"},
-        {name:"amarelo", id:"739364749224968264"},
-        {name:"azul", id:"739364868976803911"},
-        {name:"vermelho", id:"739364872474591242"},
-        {name:"marrom", id:"739365027525558312"},
+        {name:"ciano", id:"739360066162917457"} || "928551525024956457", 
+        {name:"laranja", id:"739364270135050331" || "928551540367699968"}, 
+        {name:"verde", id:"739364714399662151" || "928551589218775100"},
+        {name:"preto", id:"739364437089058837" || "928551591504654356"},
+        {name:"branco", id:"739364500406272061" || "928551593622790187"},
+        {name:"rosa", id:"739364363869093950" || "928551596722368542"},
+        {name:"roxo", id:"739364393141272616" || "928551599062810694"},
+        {name:"amarelo", id:"739364749224968264" || "928551601742958613"},
+        {name:"azul", id:"739364868976803911" || `904966012426911754`},
+        {name:"vermelho", id:"739364872474591242" || "928551604309856266"},
+        {name:"marrom", id:"739365027525558312" || "928551606839025674"},
     ];
     var names = colors.map(function(item) {
         return item["name"].toLowerCase();
