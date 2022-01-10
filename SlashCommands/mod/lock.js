@@ -26,9 +26,8 @@ module.exports = {
         const canal = interaction.options.getChannel(`canal`) 
 
         if (!client.lockit) client.lockit = [];
-        interaction.channel.permissionOverwrites.create(interaction.guild.id, { SEND_MESSAGES: false }) //assim so tranca o canal que foi enviada a mensagem
-
+        canal.permissionOverwrites.create(interaction.guild.id, { SEND_MESSAGES: false }) 
         interaction.reply({ content: `Canal trancado com sucesso. 👍`, ephemeral: true})
-        //canal.send(`:lock: este canal foi trancado!`)
+        canal.send(`:lock: este canal foi trancado!`)
     },
 };

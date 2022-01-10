@@ -1,5 +1,3 @@
-ver o comando de lock que nao tranca o selecionado e sim o da mensagem
-
 criar o comando de config igual o bot de jogos gratis
 
 testar todos os comandos
