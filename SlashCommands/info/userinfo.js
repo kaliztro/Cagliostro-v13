@@ -28,12 +28,12 @@ module.exports = {
 
         const activities = member.presence?.activities || []
 
-        if (member.presence.status === 'online') member.presence.status = '`🟢`Online';
-        if (member.presence.status === 'idle') member.presence.status = '`🟡`Ausente';
-        if (member.presence.status === 'dnd') member.presence.status = '`🔴`Não perturbar';
-        if (member.presence.status === 'offline') member.presence.status = '`⚫`offline';
+        if (member.presence?.status === 'online') member.presence.status = '`🟢`Online'; 
+        if (member.presence?.status === 'idle') member.presence.status = '`🟡`Ausente';
+        if (member.presence?.status === 'dnd') member.presence.status = '`🔴`Não perturbar';
 
-        let status = member.presence.status;
+        let status = member.presence?.status || '`⚫`offline' 
+
         const embed = new MessageEmbed()
             .setAuthor(member.user.tag, member.user.displayAvatarURL())
             .setColor(config.cor)
@@ -42,7 +42,7 @@ module.exports = {
             .addField("Tag", `#${member.user.discriminator}`)
             .addField("ID", member.id)
             .addField('Cargo(s)', `<@&${member._roles.join('> <@&')}>`)
-            .addField(`Premium desde`, `${moment(member.premiumSinceTimestamp).format('LL') || `Não é premium`} `)
+            .addField(`Premium desde`, `${moment(member.premiumSinceTimestamp).format('LL') }`)
             .addField("Conta criada em:", ` ${moment(member.user.createdTimestamp).format('LL')} ${moment(member.user.createdTimestamp).fromNow()}`)
             .addField('Juntou-se ao servidor em:', `${moment(member.joinedAt).format('LL LTS')}`)
             .setDescription(activities.map((x, i) => `**${x.type}**: ${x.name || "None"} : ${x.details || "None"} : ${x.state || "None"}`).join("\n"))
