@@ -1,6 +1,6 @@
 {
     "name": "cagliostro",
-    "version": "3.0.1",
+    "version": "3.0.3",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -10,7 +10,7 @@
     "repository": {
         "type": "git",
         "url": "git+https://github.com/kaliztro/Cagliostro-3.0.git"
-      },
+    },
     "keywords": [],
     "author": "Kaliztro",
     "license": "ISC",
