@@ -37,7 +37,7 @@ module.exports = {
         const guild = client.guilds.cache.get("545386837846523905");
         const emoji = guild.emojis.cache.find(emoji => emoji.id === "891800921296756836");
 
-        const DRAM = discloud.ram();
+        const RAM = discloud.ram();
 
         const inline = true
         const botAvatar = client.user.displayAvatarURL()
@@ -68,19 +68,20 @@ module.exports = {
             .addField('**Estou online há**', `${uptime}`)
             .addField('**Criado em**', formatDate('DD/MM/YYYY', date))
             .addField('**Host**', `${emoji} DisCloudbot.com`)
-            .addField('**Uso de RAM**', `${DRAM}`)
+            .addField('**Uso de RAM**', `${RAM}`)
+            .addField(`**Status**`, status[client.user.presence.status])
             .addField("Me adicione ao seu servidor", "ㅤㅤㅤㅤ[link](https://discord.com/api/oauth2/authorize?client_id=882715660134797342&permissions=0&scope=bot%20applications.commands)in park")
             .setFooter(`2021 © ${client.user.username}.`)
             .setTimestamp()
 
-        if (client.user.presence.status) {
-            embed.addField(
-                '**Status**',
-                `${status[client.user.presence.status]}`,
-                inline,
-                true
-            )
-        }
+        // if (client.user.presence.status) {
+        //     embed.addField(
+        //         '**Status**',
+        //         `${status[client.user.presence.status]}`,
+        //         inline,
+        //         true
+        //     )
+        // }
 
         interaction.reply({ embeds: [embed] })
 
