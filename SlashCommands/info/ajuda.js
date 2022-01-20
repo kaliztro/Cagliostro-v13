@@ -90,7 +90,7 @@ module.exports = {
                 .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Aqui estão os meus comandos de moderação** \n\n **•apagar**\nApaga as mensagens de um canal.\n\n**•ban**\nBane um membro do servidor.\n\n**•expulsar**\nExpulsa um membro do servidor.\n
                 **•cargo**\nAtribui um cargo ao membro mencionado.\n\n**•rcargo**\nRemove um cargo do membro mencionado.\n\n**•falar**\nBot fala o que for escrito.\n\n**•lock**\ntranca um canal.\n\n**•unlock**\nDestranca um canal.\n
-                **•prefix**\nAltera o prefixo do bot.\n\n**•say**\nBot fala o que for escrito sé que em Embed.\n\n `);
+                **•prefix**\nAltera o prefixo do bot.\n\n**•say**\nBot fala o que for escrito sé que em Embed.\n\n**•mutar**\nMuta o membro.\n\n `);
 
                 interaction.editReply({ embeds: [embed3], components: [painel] });
             };
