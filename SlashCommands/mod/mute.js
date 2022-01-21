@@ -14,7 +14,7 @@ module.exports = {
             required: true
         },
         {
-            name: 'time',
+            name: 'tempo',
             type: 'STRING',
             description: 'Tempo do castigo! ex: 50s, 2m, 1h',
             required: true
@@ -41,7 +41,7 @@ module.exports = {
 
         let user = interaction.options.getUser(`usuário`)
         let member = interaction.guild.members.cache.get(user.id)
-        let timer = interaction.options.getString(`time`)
+        let timer = interaction.options.getString(`tempo`)
         let reason = interaction.options.getString('motivo') || `Parece que foi sem motivo.`
 
         let time = ms(timer)
