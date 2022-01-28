@@ -15,6 +15,7 @@
     "author": "Kaliztro",
     "license": "ISC",
     "dependencies": {
+        "axios": "^0.25.0",
         "discloud-status": "^0.1.6",
         "discord.js": "^13.2.0",
         "glob": "^7.1.7",
