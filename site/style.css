@@ -164,9 +164,9 @@ border-top: 0.4px solid #FFFFFF;
     flex-flow: row wrap;
     }
 
-.coluna-50 {
-    width: 624px;
-}
+    .coluna {
+        padding: 24px;
+    }
 
 .cmd-adm-titulo {
     font-size: 34px;
