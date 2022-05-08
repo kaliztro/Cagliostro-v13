@@ -18,8 +18,8 @@ colocar emoji no comando serverinfo
 
 corrigir problema em que se o bot nao tem permissao ele fecha
 
-criar o comando castigo
-
 setar o comando cor para funcionar apenas no servidor do fabricio e parceiros 
+
+adicionar a opção de escolher o canal para apagar as mensagens
 
 se o comando em / n tiver o bot crasha
