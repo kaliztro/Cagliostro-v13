@@ -10,6 +10,12 @@ module.exports = {
             type: 'NUMBER',
             description: 'Número de mensagens à serem excluidas.',
             required: true
+        },
+        {
+            name: `canal`,
+            type: `CHANNEL`,
+            description: `Devo apagar as mensagens de qual canal?.`,
+            required: false            
         }
     ],
 
@@ -27,14 +33,16 @@ module.exports = {
 
         const deleteCount = parseInt(interaction.options.getNumber('quantas'), 10)
 
+        let canal = interaction.options.getChannel(`canal`) || interaction.channel;
+
         if (!deleteCount || deleteCount < 1 || deleteCount > 99)
             return interaction.reply("forneça um número de até **99 mensagens** a serem excluídas");
 
-        const fetched = await interaction.channel.messages.fetch({
+        const fetched = await canal.messages.fetch({
             limit: deleteCount 
         });
 
-        interaction.channel.bulkDelete(fetched)
+        canal.bulkDelete(fetched)
         .then(() => interaction.reply({ content: `**${interaction.options.getNumber('quantas')} mensagens limpas nesse chat!**`, ephemeral: true }))
     
 
