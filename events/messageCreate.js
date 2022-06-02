@@ -1,5 +1,6 @@
 const client = require("../index");
 const PREFIX = client.config.PREFIX
+const id = require(`../ids/usuarios.json`)
 
 const Schema = require('../models/Guilds');
 
@@ -16,7 +17,8 @@ client.on("messageCreate", async (message) => {
 
     const menção = message.mentions.users.first()
     if (menção) {
-        if (menção.id === `${client.user.id}`) return message.channel.send(`${emoji}   Olá ${message.author.username}! Meu prefixo neste servidor é: **${prefix}**, Para mais informações utilize:  **${prefix}ajuda**`)
+        if (menção.id === `${client.user.id}` && message.author.id === id.otelo) { return message.channel.send(`Pinga eu não nóia`)};
+        if (menção.id === `${client.user.id}`) { return message.channel.send(`${emoji}   Olá ${message.author.username}! Meu prefixo neste servidor é: **${prefix}**, Para mais informações utilize:  **${prefix}ajuda**`)}
     };
 
 

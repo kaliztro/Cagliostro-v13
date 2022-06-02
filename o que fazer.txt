@@ -23,3 +23,7 @@ setar o comando cor para funcionar apenas no servidor do fabricio e parceiros
 adicionar a opção de escolher o canal para apagar as mensagens
 
 se o comando em / n tiver o bot crasha
+
+comando apagar -  caso queira apagar mais q 99 ele responde com ephemeral true
+
+arrumar o comando /coinflip
