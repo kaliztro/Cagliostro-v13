@@ -13,8 +13,8 @@ module.exports = {
     run: async (client, interaction, args) => {
 
         await interaction.reply(`**Ping?**`);
-        await interaction.editReply(`🏓 **| Pong!**\n Latência da API: **${Math.round(client.ws.ping)}ms**`)
-
+        await interaction.editReply(`:ping_pong: **| Pong!**\n Latencia da API: **${Math.round(client.ws.ping)}ms**`)
+    
 
     },
 };
