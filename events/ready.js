@@ -21,7 +21,7 @@ client.on("ready", () => {
     let server = client.guilds.cache.get(`545386837846523905`);
     let canal = server.channels.cache.get('847321925189238796');
 
-    // canal.send({ content: `estou On ` });
+    canal.send({ content: `estou On ` });
 
 });
 
