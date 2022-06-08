@@ -15,9 +15,13 @@
     "author": "Kaliztro",
     "license": "ISC",
     "dependencies": {
+        "@discordjs/opus": "^0.7.0",
+        "@discordjs/voice": "^0.10.0",
         "axios": "^0.25.0",
         "discloud-status": "^0.1.6",
+        "discord-player": "^5.2.2",
         "discord.js": "^13.2.0",
+        "ffmpeg-static": "^4.4.1",
         "glob": "^7.1.7",
         "moment": "^2.29.1",
         "mongoose": "^6.0.2"
