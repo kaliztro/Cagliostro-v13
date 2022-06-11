@@ -42,6 +42,12 @@ module.exports = {
                     value: `ajus`,
                 },
                 {
+                    label: `musica`,
+                    description: `comandos de música`,
+                    emoji: `🎶`,
+                    value: `mus`,
+                },
+                {
                     label: `Diversão`,
                     description: `comandos de diversão`,
                     emoji: `🥳`,
@@ -67,7 +73,7 @@ module.exports = {
                 let embed3 = new MessageEmbed()
                 .setColor(config.cor)
                 .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                .setDescription(`\n **Selecione a categoria de comando.**\n\n  📻 **Informações** \n\n 🦾 **Moderação** \n\n ⚙️ **Configuração** \n\n 🥳 **Diversão**`);
+                .setDescription(`\n **Selecione a categoria de comando.**\n\n  📻 **Informações** \n\n 🦾 **Moderação** \n\n 🎶 **Música**  \n\n ⚙️ **Configuração** \n\n 🥳 **Diversão**`);
 
                 interaction.editReply({ embeds: [embed3], components: [painel] });
             };
@@ -100,6 +106,15 @@ module.exports = {
                 .setColor(config.cor)
                 .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
                 .setDescription(`**Aqui estão os meus comandos de ajustes** \n\n **ERRO 404** Comandos não encontrados`);
+
+                interaction.editReply({ embeds: [embed3], components: [painel] });
+            };
+            if (valor === `mus` ) {
+
+                let embed3 = new MessageEmbed()
+                .setColor(config.cor)
+                .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
+                .setDescription(`**Aqui estão os meus comandos de música** \n\n **•play**\n\n**•pause**\n\n**•stop**\n\n**•loop**\n\n**•resume**\n\n**•skip**\n\n**•queue**\n\n**•volume**\n\n**•nowplaying**`);
 
                 interaction.editReply({ embeds: [embed3], components: [painel] });
             };
