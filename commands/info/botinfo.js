@@ -27,7 +27,7 @@ module.exports = {
             let uptime = ` ${days.toFixed()}d ${hours.toFixed()}h ${minutes.toFixed()}m ${seconds.toFixed()}s`;
           
             const guild = client.guilds.cache.get("545386837846523905");
-            const emoji = guild.emojis.cache.find(emoji => emoji.id === "891800921296756836");
+            const emoji = guild.emojis.cache.find(emoji => emoji.id === "985287668902531152");
         
             const DRAM = discloud.ram();
         
@@ -59,7 +59,7 @@ module.exports = {
               .addField('**Usuários**', `ㅤ👥${usersize}`, inline)
               .addField('**Estou online há**', `${uptime}`)
               .addField('**Criado em**', formatDate('DD/MM/YYYY', date))
-              .addField('**Host**', `${emoji} DisCloudbot.com`)
+              .addField('**Host**', `${emoji} AWS`)
               .addField('**Uso de RAM**', `${DRAM}` )
               .addField("Me adicione ao seu servidor", "ㅤㅤㅤㅤ[link](https://discord.com/api/oauth2/authorize?client_id=882715660134797342&permissions=0&scope=bot%20applications.commands)in park")
               .setFooter(`2021 © ${client.user.username}.`)
