@@ -10,7 +10,7 @@ module.exports = {
         let embed = new MessageEmbed()
             .setColor(config.cor)
             .setAuthor(interaction.user.username, interaction.user.displayAvatarURL({ dynamic: true, size: 1024 }))
-            .setDescription(`\n **Selecione a categoria de comando.**\n\n  📻 **Informações** \n\n 🦾 **Moderação** \n\n ⚙️ **Configuração** \n\n 🥳 **Diversão**`);
+            .setDescription(`\n **Selecione a categoria de comando.**\n\n  📻 **Informações** \n\n 🦾 **Moderação** \n\n 🎶 **Música**  \n\n ⚙️ **Configuração** \n\n 🥳 **Diversão**`);
 
         let painel = new MessageActionRow().addComponents(new MessageSelectMenu()
             .setCustomId(`menu`)
