@@ -43,11 +43,11 @@ module.exports = async (client) => {
     client.on("ready", async () => {
         // registra em apenas um servidor
 
-        await client.guilds.cache.get("904510678704979990").commands.set(arrayOfSlashCommands);
+        // await client.guilds.cache.get("904510678704979990").commands.set(arrayOfSlashCommands);
 
         // registra em todos os servidors
 
-        // await client.application.commands.set(arrayOfSlashCommands);
+        await client.application.commands.set(arrayOfSlashCommands);
         
     });
 
