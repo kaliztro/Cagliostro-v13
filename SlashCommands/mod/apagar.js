@@ -36,7 +36,7 @@ module.exports = {
         let canal = interaction.options.getChannel(`canal`) || interaction.channel;
 
         if (!deleteCount || deleteCount < 1 || deleteCount > 99)
-            return interaction.reply("forneça um número de até **99 mensagens** a serem excluídas");
+            return interaction.reply({ content: "forneça um número de até **99 mensagens** a serem excluídas", ephemeral: true});
 
         const fetched = await canal.messages.fetch({
             limit: deleteCount 
