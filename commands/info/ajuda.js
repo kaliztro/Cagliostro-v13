@@ -86,10 +86,10 @@ module.exports = {
                     let embed2 = new Discord.MessageEmbed()
                     .setColor(config.cor)
                     .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Aqui estão os meus comandos que ira deixar você informado.** \n\n **•avatar**\nMostra o seu avatar, ou o avatar de quem vc mencionar.\n 
-                    **•botinfo**\nMostra as informações do bot.\n\n **•serverinfo**\nMostra as Informação do servidor.\n\n **•userinfo**\nMostra as informações do usuario mencionado.\n 
-                    **•ping**\nMostra a latência da API.\n\n **•sugestão**\nUse esse comando para enviar sugestões aos membros da adm do servidor.\n
-                    **•tempo**\nMostra o tempo que o bot esta ON.`);
+                    .setDescription(`**Aqui estão os meus comandos que ira deixar você informado.** \n\n **/avatar**\nMostra o seu avatar, ou o avatar de quem vc mencionar.\n 
+                    **/botinfo**\nMostra as informações do bot.\n\n **/serverinfo**\nMostra as Informação do servidor.\n\n **/userinfo**\nMostra as informações do usuario mencionado.\n 
+                    **/ping**\nMostra a latência da API.\n\n **/sugestão**\nUse esse comando para enviar sugestões aos membros da adm do servidor.\n
+                    **/tempo**\nMostra o tempo que o bot esta ON.`);
 
                     msg.edit({ embeds: [embed2], components: [painel] });
                 };
@@ -98,9 +98,9 @@ module.exports = {
                     let embed3 = new Discord.MessageEmbed()
                     .setColor(config.cor)
                     .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Aqui estão os meus comandos de moderação** \n\n **•apagar**\nApaga as mensagens de um canal.\n\n**•ban**\nBane um membro do servidor.\n\n**•expulsar**\nExpulsa um membro do servidor.\n
-                    **•cargo**\nAtribui um cargo ao membro mencionado.\n\n**•rcargo**\nRemove um cargo do membro mencionado.\n\n**•falar**\nBot fala o que for escrito.\n\n**•lock**\ntranca um canal.\n\n**•unlock**\nDestranca um canal.\n
-                    **•prefix**\nAltera o prefixo do bot.\n\n**•say**\nBot fala o que for escrito sé que em Embed.\n\n**•mutar**\nMuta o membro.\n\n `);
+                    .setDescription(`**Aqui estão os meus comandos de moderação** \n\n **/apagar**\nApaga as mensagens de um canal.\n\n**/ban**\nBane um membro do servidor.\n\n**/expulsar**\nExpulsa um membro do servidor.\n
+                    **/cargo**\nAtribui um cargo ao membro mencionado.\n\n**/rcargo**\nRemove um cargo do membro mencionado.\n\n**/falar**\nBot fala o que for escrito.\n\n**/lock**\ntranca um canal.\n\n**/unlock**\nDestranca um canal.\n
+                    **/prefix**\nAltera o prefixo do bot.\n\n**/say**\nBot fala o que for escrito sé que em Embed.\n\n**/mutar**\nMuta o membro.\n\n**/disconnect**\nDesconecta o usuario do canal de voz.\n\n `);
 
                     msg.edit({ embeds: [embed3], components: [painel] });
                 };
@@ -118,7 +118,7 @@ module.exports = {
                     let embed3 = new Discord.MessageEmbed()
                     .setColor(config.cor)
                     .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Aqui estão os meus comandos de música** \n\n **•play**\n\n**•pause**\n\n**•stop**\n\n**•loop**\n\n**•resume**\n\n**•skip**\n\n**•queue**\n\n**•volume**\n\n**•nowplaying**`);
+                    .setDescription(`**Aqui estão os meus comandos de música** \n\n **/play**\n\n**/pause**\n\n**/stop**\n\n**/loop**\n\n**/resume**\n\n**/skip**\n\n**/queue**\n\n**/volume**\n\n**/nowplaying**`);
 
                     msg.edit({ embeds: [embed3], components: [painel] });
                 };
@@ -127,7 +127,7 @@ module.exports = {
                     let embed3 = new Discord.MessageEmbed()
                     .setColor(config.cor)
                     .setAuthor(client.user.username, client.user.displayAvatarURL({ dynamic: true }))
-                    .setDescription(`**Aqui estão os meus comandos de diversão** \n\n **•coinflip**\nJogo de Cara ou Coroa.\n\n **•emoji**\nEnvia o emoji escolhido no chat. \n\n **•8ball**\nResponde a sua pergunta`);
+                    .setDescription(`**Aqui estão os meus comandos de diversão** \n\n **/coinflip**\nJogo de Cara ou Coroa.\n\n **/emoji**\nEnvia o emoji escolhido no chat. \n\n **/8ball**\nResponde a sua pergunta`);
 
                     msg.edit({ embeds: [embed3], components: [painel] });
                 };
