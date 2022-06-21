@@ -3,7 +3,7 @@ const config = require(`../../config.json`);
 
 module.exports = {
     name: "disconnect",
-    description: "Bot fala o que for escrito.",
+    description: "Desconecta o usuário do canal de voz.",
     options: [
         {
             name: 'usuário',
@@ -14,7 +14,7 @@ module.exports = {
         {
             name: 'motivo',
             type: 'STRING',
-            description: 'Motivo do castigo.',
+            description: 'Motivo da desconexão.',
             required: false
         },
     ],
