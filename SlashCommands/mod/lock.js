@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
 const config = require(`../../config.json`);
 
 module.exports = {
@@ -21,7 +21,9 @@ module.exports = {
 
 
     run: async (client, interaction, args) => {
-        if (!interaction.member.permissions.has('MANAGE_MESSAGES')) return interaction.reply({ content: 'Você não tem permissão para isso. 😤', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'Você não tem permissão para isso. 😤', ephemeral: true })
+
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.MANAGE_CHANNELS)) return interaction.reply({ content: 'Eu não tenho permissao de gerenciar canais', ephemeral: true })
 
         const canal = interaction.options.getChannel(`canal`) 
 

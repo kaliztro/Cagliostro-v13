@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
 const config = require(`../../config.json`);
 
 module.exports = {
@@ -29,7 +29,9 @@ module.exports = {
 
 
     run: async (client, interaction, args) => {
-        if (!interaction.member.permissions.has('MANAGE_MESSAGES')) return interaction.reply({ content: 'É. \n parece que vc não pode usar esse comando. 😂', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'É. \n parece que vc não pode usar esse comando. 😂', ephemeral: true })
+
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'Eu não posso apagar as mensagens. não tenho permissao de gerenciar mensagens', ephemeral: true })
 
         const deleteCount = parseInt(interaction.options.getNumber('quantas'), 10)
 

@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
 const config = require(`../../config.json`);
 
 const ms = require(`ms`);
@@ -37,7 +37,9 @@ module.exports = {
 
 
     run: async (client, interaction, args) => {
-        if (!interaction.member.permissions.has('MANAGE_MESSAGES')) return interaction.reply({ content: 'você não pode mutar outro membro!', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.MODERATE_MEMBERS)) return interaction.reply({ content: 'você não pode mutar outro membro!', ephemeral: true })
+
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.MODERATE_MEMBERS)) return interaction.reply({ content: 'Eu não tenho permissao de gerenciar mensagens', ephemeral: true })
 
         let user = interaction.options.getUser(`usuário`)
         let member = interaction.guild.members.cache.get(user.id)
@@ -57,6 +59,5 @@ module.exports = {
         .then(interaction.reply({embeds: [embed]}))
 
         
-
     },
 };

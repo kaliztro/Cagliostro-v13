@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
 const config = require(`../../config.json`);
 
 module.exports = {
@@ -29,7 +29,9 @@ module.exports = {
 
 
     run: async (client, interaction, args) => {
-        if (!interaction.member.permissions.has('KICK_MEMBERS')) return interaction.reply({ content: 'você é fraco, vc não consegue expulsar ninguém. chame algum adulto para ajuda-lo.', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) return interaction.reply({ content: 'você é fraco, vc não consegue expulsar ninguém. chame algum adulto para ajuda-lo.', ephemeral: true })
+
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) return interaction.reply({ content: '🛑 Erro ao expulsar o usuário!, eu não tenho permissão para tal coisa.', ephemeral: true })
 
         const user = interaction.options.getUser('usuário')
         if (interaction.user.id === user.id) return interaction.reply({ content: 'Você não pode se expulsar.', ephemeral: true })
@@ -50,9 +52,9 @@ module.exports = {
             }))
             .setTimestamp()
 
-        interaction.guild.members.kick(user, { reason })
+        interaction.guild.members.kick(user, { reason: reason })
             .then(() => interaction.reply({ embeds: [embed] }))
-            .catch(() => interaction.reply({ content: 'Erro ao expulsar o usuário!', ephemeral: true }))
+            .catch(() => interaction.reply({ content: '🛑 Erro ao expulsar o usuário!', ephemeral: true }))
 
     },
 };

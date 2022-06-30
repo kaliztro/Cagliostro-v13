@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
 const config = require(`../../config.json`);
 
 module.exports = {
@@ -25,11 +25,13 @@ module.exports = {
      * @param {Client} client
      * @param {CommandInteraction} interaction
      * @param {String[]} args
-     */
+     */ 
 
 
     run: async (client, interaction, args) => {
-        if (!interaction.member.permissions.has('MANAGE_MESSAGES')) return interaction.reply({ content: 'Você não manda em mim. 😡', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'Você não manda em mim. 😡', ephemeral: true })
+
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return interaction.reply({ content: '🛑 Eu não tenho permissao para enviar mensagens.', ephemeral: true })
 
         const canal = interaction.options.getChannel(`canal`)
         if (![`GUILD_TEXT`, `GUILD_ANNOUCEMENTS`].includes(canal.type)) return interaction.reply({ content: `Não consegui falar nada. vc informou um canal de texto válido?`, ephemeral: true })

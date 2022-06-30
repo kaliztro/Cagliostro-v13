@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, Permissions} = require("discord.js");
 const config = require(`../../config.json`);
 
 module.exports = {
@@ -29,7 +29,9 @@ module.exports = {
 
 
     run: async (client, interaction, args) => {
-        if (!interaction.member.permissions.has('MANAGE_ROLES')) return interaction.reply({ content: 'Parece que vc não tem permissão para isso, porfavor peça ajuda de um adulto.', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.MANAGE_ROLES)) return interaction.reply({ content: 'Parece que vc não tem permissão para isso, porfavor peça ajuda de um adulto.', ephemeral: true })
+
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.MANAGE_ROLES)) return interaction.reply({ content: '🛑 Erro ao atribuir o cargo ao usuário!, eu não tenho permissão de gerenciar cargos. ', ephemeral: true })
 
         const role = interaction.options.getRole('cargo');
         const member = interaction.options.getMember('usuário');

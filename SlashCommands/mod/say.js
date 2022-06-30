@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed, MessageActionRow,MessageSelectMenu } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, MessageActionRow, MessageSelectMenu, Permissions } = require("discord.js");
 const config = require(`../../config.json`);
 
 module.exports = {
@@ -23,7 +23,9 @@ module.exports = {
 
 
     run: async (client, interaction, args) => {
-        if (!interaction.member.permissions.has('MANAGE_MESSAGES')) return interaction.reply({ content: 'Você não tem permissão para usar este comando!', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'Você não tem permissão para usar este comando!', ephemeral: true })
+
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return interaction.reply({ content: '🛑 Eu não tenho permissao para enviar mensagens.', ephemeral: true })
 
         const channels = interaction.guild.channels.cache
             .filter(c => c.type === 'GUILD_TEXT' && c.permissionsFor(client.user.id).has(['SEND_MESSAGES', 'EMBED_LINKS']) && c.permissionsFor(interaction.user.id).has('SEND_MESSAGES'))

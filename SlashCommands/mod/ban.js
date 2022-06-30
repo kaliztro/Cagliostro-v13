@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
 const config = require(`../../config.json`);
 
 module.exports = {
@@ -29,7 +29,9 @@ module.exports = {
 
 
     run: async (client, interaction, args) => {
-        if (!interaction.member.permissions.has('BAN_MEMBERS')) return interaction.reply({ content: 'Você precisa de permissão para banir membros no servidor.', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) return interaction.reply({ content: 'Você precisa de permissão para banir membros no servidor.', ephemeral: true })
+
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) return interaction.reply({ content: 'Eu não tenho permissao para banir usuarios', ephemeral: true })
 
         const user = interaction.options.getUser('usuário')
         if (interaction.user.id === user.id) return interaction.reply({ content: 'Você não pode se banir.', ephemeral: true })
@@ -50,9 +52,9 @@ module.exports = {
         }))
         .setTimestamp()
 
-        interaction.guild.members.ban(user, { reason })
+        interaction.guild.members.ban(user, { reason: reason })
             .then(() => interaction.reply({ embeds: [embed] }))
-            .catch(() => interaction.reply({ content: 'Erro ao banir o usuário!', ephemeral: true }))
+            .catch(() => interaction.reply({ content: '🛑 Erro ao banir o usuário!', ephemeral: true }))
     
     },
 };
