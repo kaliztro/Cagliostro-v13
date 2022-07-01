@@ -56,7 +56,7 @@ module.exports = {
             .setColor(config.cor)
 
         const fila = new MessageEmbed()
-        .setDescription(`A música **${queue.tracks}** foi adiconada à fila com sucesso!!`)
+        .setDescription(`A música **${queue.tracks}** foi adicionada à fila com sucesso!!`)
         .setColor(config.cor)
 
         if (!queue?.playing) await interaction.editReply({ embeds: [tocando] });
