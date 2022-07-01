@@ -55,12 +55,31 @@ module.exports = {
             .setImage(currentTrack.thumbnail)
             .setColor(config.cor)
 
-        const fila = new MessageEmbed()
-        .setDescription(`A música **${queue.tracks}** foi adicionada à fila com sucesso!!`)
+            const tracks = queue.tracks.slice(0, 10).map((m, i) => {
+                return `${i + 1}. [**${m.title}**](${m.url}) - ${
+                    m.requestedBy.tag
+                }`;
+            });
+
+        const pastel = new MessageEmbed()
+        .setDescription(`🎶 Música adicionada à fila com sucesso!! 🎶`)
+        .addField("Música(s):", `${tracks.join("\n")}${
+            queue.tracks.length > tracks.length
+                ? `\n...${
+                      queue.tracks.length - tracks.length === 1
+                          ? `${
+                                queue.tracks.length - tracks.length
+                            } more track`
+                          : `${
+                                queue.tracks.length - tracks.length
+                            } more tracks`
+                  }`
+                : ""
+        } ㅤ`)
         .setColor(config.cor)
 
         if (!queue?.playing) await interaction.editReply({ embeds: [tocando] });
-        if (queue?.playing) await interaction.editReply({embeds: [fila] });
+        if (queue?.playing) await interaction.editReply({embeds: [pastel] });
 
         //fim
 
