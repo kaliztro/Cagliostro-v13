@@ -24,11 +24,11 @@ module.exports = {
             choices: [
                 {
                     name: "Cara",
-                    value: "aa"
+                    value: "cara"
                 },
                 {
                     name: "Coroa",
-                    value: "animal_dog"
+                    value: "coroa"
                 },
             ]
         }
@@ -36,26 +36,19 @@ module.exports = {
 
     run: async (client, interaction, args) => {
 
-     const escolha = interaction.choices.getString('aa')
-
-     interaction.reply(`escolheu ${escolha}`)
-
-
-    //     var array1 = ["cara", "coroa"];
+        var array1 = ["cara", "coroa"];
   
-    //     var rand = Math.floor(Math.random() * array1.length);
+        var rand = Math.floor(Math.random() * array1.length);
       
-    //     const escolha = interaction.options.getString('cara-ou-coroa')
-    //     if ((escolha.toLowerCase() !== "cara" && escolha.toLowerCase() !== "coroa")) {
-    //         return interaction.reply({ content: 'Você deve escolher Cara ou Coroa.', ephemeral: true })
-    //     } 
-    //   else if (escolha.toLowerCase() == array1[rand]) {
-    //       interaction.reply("Deu **" + array1[rand] + "**, você ganhou!")
-    //     } 
-    //   else if (escolha.toLowerCase() != array1[rand]) {
-    //       interaction.reply("Deu **" + array1[rand] + "**, você perdeu!")
-    //     }
-        
+        const escolha = interaction.options.getString('cara-ou-coroa')
+
+      if (escolha.toLowerCase() == array1[rand]) {
+          interaction.reply("Deu **" + array1[rand] + "**, você ganhou!")
+        } 
+      else if (escolha.toLowerCase() != array1[rand]) {
+          interaction.reply("Deu **" + array1[rand] + "**, você perdeu!")
+        }
+
     },
 };
 
