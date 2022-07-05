@@ -10,7 +10,7 @@ client.on(`voiceStateUpdate`, async (oldstate, newstate, message) => {
 
     if (newstate) {
 
-        if (newstate.id === id.fafsbricio) {
+        if (newstate.id === id.tutui) {
 
             const canal = newstate.channelId
             const server = newstate.guild.id
