@@ -1,4 +1,7 @@
 const player = require("../../config/player");
+const { MessageEmbed } = require("discord.js");
+
+const config = require("../../config.json");
 
 module.exports = {
     name: "skip",
@@ -12,6 +15,10 @@ module.exports = {
 
         await queue.skip();
 
-        interaction.reply({ content: "Pulou a faixa atual!" });
+        const embed = new MessageEmbed()
+        .setTitle(`⏭️ ${interaction.user.username} Pulou a Música! `)
+        .setColor(config.cor)
+
+        interaction.reply({ embeds: [embed]});
     },
 };

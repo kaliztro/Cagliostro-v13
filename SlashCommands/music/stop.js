@@ -1,4 +1,7 @@
 const player = require("../../config/player");
+const { MessageEmbed } = require("discord.js");
+
+const config = require("../../config.json");
 
 module.exports = {
     name: "stop",
@@ -14,7 +17,11 @@ module.exports = {
             metadata: interaction.channel,
         });
 
-        interaction.reply(`A música foi parada com sucesso`);
+        const embed = new MessageEmbed()
+        .setTitle(`⏹️ ${interaction.user.username} Parou a Música! `)
+        .setColor(config.cor)
+
+        interaction.reply({ embeds: [embed] });
 
         if (queue.playing) await queue.stop();
     },

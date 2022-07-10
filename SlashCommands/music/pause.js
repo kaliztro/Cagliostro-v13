@@ -1,4 +1,7 @@
 const player = require("../../config/player");
+const { MessageEmbed } = require("discord.js");
+
+const config = require("../../config.json");
 
 module.exports = {
     name: "pause",
@@ -8,6 +11,10 @@ module.exports = {
 
         queue.setPaused(true);
 
-        return interaction.reply({ content: "Pausou a faixa atual!" });
+        const embed = new MessageEmbed()
+        .setTitle(`⏸️ ${interaction.user.username} Pausou a Música! `)
+        .setColor(config.cor)
+
+        return interaction.reply({ embeds: [embed] });
     },
 };
