@@ -26,7 +26,7 @@ module.exports = {
             let uptime = ` ${days.toFixed()}d ${hours.toFixed()}h ${minutes.toFixed()}m ${seconds.toFixed()}s`;
           
             const guild = client.guilds.cache.get("545386837846523905");
-            const emoji = guild.emojis.cache.find(emoji => emoji.id === "985287668902531152");
+            const emoji = guild?.emojis.cache.find(emoji => emoji.id === "985287668902531152") || `🖨️`;
         
         
             const inline = true
