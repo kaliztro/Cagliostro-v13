@@ -14,7 +14,7 @@ client.on("messageCreate", async (message) => {
     if (!message.guild) return;
 
     const emoj = client.guilds.cache.get("545386837846523905");
-    const emoji = emoj.emojis.cache.find(emoji => emoji.name === "cagliostro");
+    const emoji = emoj?.emojis.cache.find(emoji => emoji.name === "cagliostro") || `👌`;
 
     const menção = message.mentions.users.first()
     if (menção) {
@@ -26,7 +26,5 @@ client.on("messageCreate", async (message) => {
 
 
 });
-
-
 
 
