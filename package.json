@@ -18,7 +18,6 @@
         "@discordjs/opus": "^0.7.0",
         "@discordjs/voice": "^0.10.0",
         "axios": "^0.25.0",
-        "discloud-status": "^0.1.6",
         "discord-player": "^5.2.2",
         "discord.js": "^13.2.0",
         "ffmpeg-static": "^4.4.1",

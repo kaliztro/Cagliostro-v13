@@ -1,7 +1,6 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
 const config = require(`../../config.json`);
 const moment = require('moment');
-const discloud = require("discloud-status");
 
 const client = require("../../index");
 const PREFIX = client.config.PREFIX
@@ -37,7 +36,6 @@ module.exports = {
         const guild = client.guilds.cache.get("545386837846523905");
         const emoji = guild.emojis.cache.find(emoji => emoji.id === "985287668902531152");
 
-        const RAM = discloud.ram();
 
         const inline = true
         const botAvatar = client.user.displayAvatarURL()
@@ -68,7 +66,6 @@ module.exports = {
             .addField('**Estou online há**', `${uptime}`)
             .addField('**Criado em**', formatDate('DD/MM/YYYY', date))
             .addField('**Host**', `${emoji} AWS`)
-            .addField('**Uso de RAM**', `${RAM}`)
             .addField(`**Status**`, status[client.user.presence.status])
             .addField("Me adicione ao seu servidor", "ㅤㅤㅤㅤ[link](https://discord.com/api/oauth2/authorize?client_id=882715660134797342&permissions=0&scope=bot%20applications.commands)in park")
             .setFooter(`2021 © ${client.user.username}.`)
