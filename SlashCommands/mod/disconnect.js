@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
-const config = require(`../../config.json`);
 
 module.exports = {
     name: "disconnect",
@@ -28,7 +27,7 @@ module.exports = {
      */
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
         if (!interaction.member.permissions.has(Permissions.FLAGS.MODERATE_MEMBERS)) return interaction.reply({ content: 'Você não manda em mim. 😡', ephemeral: true })
 
         const cara = interaction.options.getUser('usuário');

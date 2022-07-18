@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
-const config = require(`../../config.json`);
 
 module.exports = {
     name: 'ban',
@@ -28,7 +27,7 @@ module.exports = {
      */
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
         if (!interaction.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) return interaction.reply({ content: 'Você precisa de permissão para banir membros no servidor.', ephemeral: true })
 
         if (!interaction.guild.me.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) return interaction.reply({ content: 'Eu não tenho permissao para banir usuarios', ephemeral: true })

@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed, MessageActionRow, MessageSelectMenu, Permissions } = require("discord.js");
-const config = require(`../../config.json`);
 
 module.exports = {
     name: 'say',
@@ -22,7 +21,7 @@ module.exports = {
      */
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
         if (!interaction.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'Você não tem permissão para usar este comando!', ephemeral: true })
 
         if (!interaction.guild.me.permissions.has(Permissions.FLAGS.SEND_MESSAGES)) return interaction.reply({ content: '🛑 Eu não tenho permissao para enviar mensagens.', ephemeral: true })
@@ -66,7 +65,7 @@ module.exports = {
             const embed = new MessageEmbed()
                 .setTitle(`Uma mensagem foi enviada neste canal.`)
                 .setDescription(texto)
-                .setColor('#0000ff')
+                .setColor(config.cor)
                 .setTimestamp()
 
             canal.send({ embeds: [embed] })

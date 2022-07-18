@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
-const config = require(`../../config.json`);
 
 const ms = require(`ms`);
 
@@ -36,7 +35,7 @@ module.exports = {
      */
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
         if (!interaction.member.permissions.has(Permissions.FLAGS.MODERATE_MEMBERS)) return interaction.reply({ content: 'você não pode mutar outro membro!', ephemeral: true })
 
         if (!interaction.guild.me.permissions.has(Permissions.FLAGS.MODERATE_MEMBERS)) return interaction.reply({ content: 'Eu não tenho permissao de gerenciar mensagens', ephemeral: true })

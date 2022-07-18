@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
-const config = require(`../../config.json`);
 
 module.exports = {
     name: 'expulsar',
@@ -28,7 +27,7 @@ module.exports = {
      */
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
         if (!interaction.member.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) return interaction.reply({ content: 'você é fraco, vc não consegue expulsar ninguém. chame algum adulto para ajuda-lo.', ephemeral: true })
 
         if (!interaction.guild.me.permissions.has(Permissions.FLAGS.KICK_MEMBERS)) return interaction.reply({ content: '🛑 Erro ao expulsar o usuário!, eu não tenho permissão para tal coisa.', ephemeral: true })

@@ -1,4 +1,5 @@
 const { ButtonInteraction } = require("discord.js");
+const config = require("../config/config.json");
 const client = require("../index");
 
 const Schema = require('../models/Guilds');
@@ -26,7 +27,7 @@ client.on("interactionCreate", async (interaction) => {
         }
         interaction.member = interaction.guild.members.cache.get(interaction.user.id);
 
-        cmd.run(client, interaction, args);
+        cmd.run(client, interaction, args, config);
     }
 
     // Context Menu Handling
