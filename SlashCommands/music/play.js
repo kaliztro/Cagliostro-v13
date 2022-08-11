@@ -2,7 +2,6 @@ const { QueryType } = require("discord-player");
 const { MessageEmbed } = require("discord.js");
 
 const player = require("../../config/player");
-const config = require("../../config.json");
 
 module.exports = {
     name: "play",
@@ -15,7 +14,7 @@ module.exports = {
             required: true,
         },
     ],
-    run: async (client, interaction) => {
+    run: async (client, interaction, config) => {
         const songTitle = interaction.options.getString("songtitle");
 
         if (!interaction.member.voice.channel)

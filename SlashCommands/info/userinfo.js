@@ -1,5 +1,5 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const config = require(`../../config.json`);
+
 const moment = require('moment');
 
 moment.locale('pt-BR');
@@ -23,7 +23,7 @@ module.exports = {
      */
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
         const member = interaction.options.getMember("usuário") || interaction.member
 
         const activities = member.presence?.activities || []

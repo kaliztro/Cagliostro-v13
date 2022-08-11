@@ -1,12 +1,10 @@
 const player = require("../../config/player");
 const { MessageEmbed } = require("discord.js");
 
-const config = require("../../config.json");
-
 module.exports = {
     name: "skip",
     description: "pula a musica",
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
         const queue = player.getQueue(interaction.guildId);
         if (!queue?.playing)
             return interaction.reply({

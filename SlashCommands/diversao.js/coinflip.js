@@ -1,17 +1,6 @@
 const { Client, CommandInteraction } = require("discord.js");
 
 module.exports = {
-    // name: "coinflip",
-    // description: "Jogo de Cara ou Coroa.",
-    // options: [
-    //     {
-    //         name: 'cara-ou-coroa',
-    //         type: 'STRING',
-    //         description: 'Escolha Cara ou Coroa.',
-    //         required: true
-    //     },
-    // ],
-
     type: 'SUB_COMMAND',
     name: 'coinflip',
     description: 'Jogo de Cara ou Coroa.',

@@ -1,12 +1,10 @@
 const player = require("../../config/player");
 const { MessageEmbed } = require("discord.js");
 
-const config = require("../../config.json");
-
 module.exports = {
     name: "stop",
     description: "para a musica",
-    run: async (client, interaction) => {
+    run: async (client, interaction, config) => {
 
         if (!interaction.member.voice.channel)
             return interaction.reply({

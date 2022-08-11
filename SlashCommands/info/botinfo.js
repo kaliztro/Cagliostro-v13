@@ -1,5 +1,5 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const config = require(`../../config.json`);
+
 const moment = require('moment');
 
 const client = require("../../index");
@@ -22,7 +22,7 @@ module.exports = {
      */
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
 
         let totalSeconds = client.uptime / 1000;
         let days = Math.floor(totalSeconds / 86400);

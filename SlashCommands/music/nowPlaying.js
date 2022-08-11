@@ -1,10 +1,9 @@
 const player = require("../../config/player");
-const config = require("../../config.json")
 
 module.exports = {
     name: "now-playing",
     description: "mostra informações sobre a música atual",
-    run: async (client, interaction) => {
+    run: async (client, interaction, config) => {
         const queue = player.getQueue(interaction.guildId);
         if (!queue?.playing)
             return interaction.reply({

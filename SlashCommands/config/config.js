@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const config = require(`../../config.json`);
 const Schema = require('../../models/Guilds');
 
 module.exports = {
@@ -28,7 +27,7 @@ module.exports = {
     ],
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
 
         const entrada = interaction.options.getChannel('entrada')
         const saida = interaction.options.getChannel('saida')

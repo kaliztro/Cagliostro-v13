@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const config = require(`../../config.json`);
 const wait = require('util').promisify(setTimeout);
 
 
@@ -15,7 +14,7 @@ module.exports = {
         },
     ],
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
 
         const option = interaction.options.getString('pergunta')
 

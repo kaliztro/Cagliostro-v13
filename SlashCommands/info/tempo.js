@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const config = require(`../../config.json`);
 
 module.exports = {
     name: "tempo",
@@ -14,7 +13,7 @@ module.exports = {
      */
 
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
         let dias = 0;
         let semanas = 0;
         

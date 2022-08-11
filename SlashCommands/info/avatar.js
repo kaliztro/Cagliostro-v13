@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const config = require(`../../config.json`);
 
 module.exports = {
     name: "avatar",
@@ -19,7 +18,7 @@ module.exports = {
      * @param {String[]} args
      */
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
 
         const user = interaction.options.getUser('usuário') || interaction.user
         let avatar = user.displayAvatarURL({ dynamic: true, size: 1024})

@@ -1,5 +1,4 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const config = require(`../../config.json`);
 
 module.exports = {
   name: "serverinfo",
@@ -13,7 +12,7 @@ module.exports = {
    */
 
 
-  run: async (client, interaction, args) => {
+  run: async (client, interaction, args, config) => {
     const verificationLevels = {
       NONE: 'Nenhuma',
       LOW: 'Baixa',

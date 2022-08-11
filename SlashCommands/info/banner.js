@@ -1,5 +1,5 @@
 const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
-const config = require(`../../config.json`);
+
 const axios = require('axios');
 
 module.exports = {
@@ -20,7 +20,7 @@ module.exports = {
      * @param {String[]} args
      */
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
 
         const user = interaction.options.getUser('usuário') || interaction.user
         

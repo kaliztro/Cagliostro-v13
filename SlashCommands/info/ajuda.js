@@ -1,11 +1,10 @@
 const { MessageEmbed, MessageActionRow, MessageSelectMenu } = require("discord.js");
-const config = require(`../../config.json`);
 
 module.exports = {
     name: "ajuda",
     description: "Mostra os comandos do bot.",
 
-    run: async (client, interaction, args) => {
+    run: async (client, interaction, args, config) => {
 
         let embed = new MessageEmbed()
             .setColor(config.cor)
