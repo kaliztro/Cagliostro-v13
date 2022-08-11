@@ -10,7 +10,7 @@ client.on(`voiceStateUpdate`, async (oldstate, newstate, message) => {
 
     if (newstate) {
 
-        if (newstate.id === id.tutui) {
+        if (newstate.id === id.nome) { //substitua id.nome pelo nome de usuario disponivel em config/usuarios.json ex: id.tutui
 
             const canal = newstate.channelId
             const server = newstate.guild.id

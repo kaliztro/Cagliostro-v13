@@ -8,7 +8,7 @@ module.exports = client;
 // Global Variables
 client.commands = new Collection();
 client.slashCommands = new Collection();
-client.config = require("./config.json");
+client.config = require("./config/config.json");
 
 // Initializing the project
 require("./handler")(client);
@@ -18,7 +18,7 @@ client.login(client.config.token);
 //prefix
 client.on("messageCreate", async (message) => {
 
-    const config = require("./config.json");
+    const config = require("./config/config.json");
     const PREFIX = config.PREFIX
 
     const Schema = require("./models/Guilds")
