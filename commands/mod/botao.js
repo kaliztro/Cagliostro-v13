@@ -1,6 +1,6 @@
 const { MessageActionRow, MessageButton } = require("discord.js")
 const Discord = require("discord.js");
-const config = require(`../../config.json`);
+const config = require(`../../config/config.json`);
 
 module.exports = {
     name: "freegames",

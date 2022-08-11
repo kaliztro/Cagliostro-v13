@@ -1,6 +1,6 @@
 const discord = require("discord.js");
 const Schema = require('../../models/Outro');
-const config = require("../../config.json");
+const config = require(`../../config/config.json`);
 
 module.exports = {
     name: "dstatus",
