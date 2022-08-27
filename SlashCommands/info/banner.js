@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, EmbedBuilder } = require("discord.js");
 
 const axios = require('axios');
 
@@ -8,7 +8,7 @@ module.exports = {
             options: [
                 {
                     name: 'usuário',
-                    type: 'USER',
+                    type: 6,
                     description: 'Usuário que vc gostaria de ver o banner.',
                     required: false
                 }
@@ -20,13 +20,13 @@ module.exports = {
      * @param {String[]} args
      */
 
-    run: async (client, interaction, args, config) => {
+    run: async (client, interaction, config) => {
 
         const user = interaction.options.getUser('usuário') || interaction.user
         
         axios.get(`https://discord.com/api/users/${user.id}`, {
             headers: {
-                Authorization: `Bot ${client.config.token}`,
+                Authorization: `Bot ${config.token}`,
             },
         }).then((res) => {
             const {
@@ -46,7 +46,7 @@ module.exports = {
                 interaction.reply({embeds: [embed]})
             } else {
                 if (accent_color) {
-                    const embed2 = new MessageEmbed()
+                    const embed2 = new EmbedBuilder()
                         .setDescription(`<--- Essa é a cor do banner de ${user.tag}.`) // quando o usuario n tem baner mas sim a cor
                         .setColor(accent_color)
                         interaction.reply({embeds: [embed2]})
