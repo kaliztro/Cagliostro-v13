@@ -1,0 +1,25 @@
+criar o comando de config igual o bot de jogos gratis
+
+testar todos os comandos
+
+verificar comandos que precisem de permissao para o bot nao crashar
+
+
+https://github.com/reconlx 
+
+
+-------------> depois do bot estar pronto <-------------
+
+sistema de xp e comando lvl no / e normal     possivel video ensinando https://www.youtube.com/watch?v=WgTK78GUmZ4&ab_channel=FusionTerror
+
+criar a opcao de reset do prefix
+
+corrigir erro: DiscordAPIError: You can only bulk delete messages that are under 14 days old.
+
+colocar emoji no comando serverinfo
+
+corrigir problema em que se o bot nao tem permissao ele fecha
+
+setar o comando cor para funcionar apenas no servidor do fabricio e parceiros 
+
+se o comando em / n tiver o bot crasha
