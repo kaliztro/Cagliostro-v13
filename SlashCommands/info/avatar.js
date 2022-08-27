@@ -1,4 +1,4 @@
-const { Client, CommandInteraction, MessageEmbed } = require("discord.js");
+const { Client, CommandInteraction, EmbedBuilder } = require("discord.js");
 
 module.exports = {
     name: "avatar",
@@ -6,7 +6,7 @@ module.exports = {
             options: [
                 {
                     name: 'usuário',
-                    type: 'USER',
+                    type: 6,
                     description: 'Usuário que vc gostaria de ver o avatar.',
                     required: false
                 }
@@ -23,11 +23,11 @@ module.exports = {
         const user = interaction.options.getUser('usuário') || interaction.user
         let avatar = user.displayAvatarURL({ dynamic: true, size: 1024})
 
-        const embed = new MessageEmbed()
-        .setColor(config.cor) 
+        const embed = new EmbedBuilder()
+        .setColor("#3086c9") 
         .setTitle(`Avatar de ${user.username}`) 
         .setImage(avatar) 
-        .setFooter(`• Autor: ${interaction.user.username}`, interaction.user.displayAvatarURL({ dynamic: true, size: 1024})); 
+        .setFooter({ text: `• Autor: ${interaction.user.username}`, iconURL: interaction.user.displayAvatarURL() }); 
 
         interaction.reply({ embeds: [embed]})
     },
