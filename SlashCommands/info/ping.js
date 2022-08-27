@@ -1,9 +1,9 @@
-const { Client, CommandInteraction, ApplicationCommandType } = require("discord.js");
+const { Client, CommandInteraction } = require("discord.js");
 
 module.exports = {
     name: "ping",
     description: "Mostra o ping do bot",
-    type: ApplicationCommandType.ChatInput,
+    type: 'CHAT_INPUT',
     /**
      *
      * @param {Client} client

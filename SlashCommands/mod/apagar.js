@@ -1,22 +1,20 @@
-const { Client, CommandInteraction, ApplicationCommandType, Permissions } = require("discord.js");
+const { Client, CommandInteraction, MessageEmbed, Permissions } = require("discord.js");
 
 module.exports = {
     name: "apagar",
     description: "Apaga as mensagens de um canal.",
-    type: ApplicationCommandType.ChatInput,
-    default_member_permissions: 'ManageMessages',
     options: [
         {
             name: 'quantas',
-            type: 10,
+            type: 'NUMBER',
             description: 'Número de mensagens à serem excluidas.',
             required: true
         },
         {
             name: `canal`,
-            type: 7,
+            type: `CHANNEL`,
             description: `Devo apagar as mensagens de qual canal?.`,
-            required: false
+            required: false            
         }
     ],
 
@@ -30,24 +28,24 @@ module.exports = {
 
 
     run: async (client, interaction, args) => {
-        // if (!interaction.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'É. \n parece que vc não pode usar esse comando. 😂', ephemeral: true })
+        if (!interaction.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'É. \n parece que vc não pode usar esse comando. 😂', ephemeral: true })
 
-        // if (!interaction.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'Eu não posso apagar as mensagens. não tenho permissao de gerenciar mensagens', ephemeral: true })
+        if (!interaction.guild.me.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) return interaction.reply({ content: 'Eu não posso apagar as mensagens. não tenho permissao de gerenciar mensagens', ephemeral: true })
 
         const deleteCount = parseInt(interaction.options.getNumber('quantas'), 10)
 
         let canal = interaction.options.getChannel(`canal`) || interaction.channel;
 
         if (!deleteCount || deleteCount < 1 || deleteCount > 99)
-            return interaction.reply({ content: "forneça um número de até **99 mensagens** a serem excluídas", ephemeral: true });
+            return interaction.reply({ content: "forneça um número de até **99 mensagens** a serem excluídas", ephemeral: true});
 
         const fetched = await canal.messages.fetch({
-            limit: deleteCount
+            limit: deleteCount 
         });
 
         canal.bulkDelete(fetched)
-            .then(() => interaction.reply({ content: `**${interaction.options.getNumber('quantas')} mensagens limpas!**`, ephemeral: true }))
-
+        .then(() => interaction.reply({ content: `**${interaction.options.getNumber('quantas')} mensagens limpas nesse chat!**`, ephemeral: true }))
+    
 
     },
 };
